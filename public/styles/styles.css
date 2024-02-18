@@ -1,0 +1,93 @@
+/* Define o estilo para o main */
+main {
+  background-color: #f1f5f9; /* Azul claro */
+  color: #36405f; /* Azul escuro */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Define o estilo para o header e o footer */
+header,
+footer {
+  background-color: #621fa1; /* Roxo */
+  color: #ffffff; /* Branco */
+}
+
+/* Define o estilo para os links */
+a {
+  color: #ffffff; /* Branco */
+}
+
+/* Define o estilo para o footer */
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Define o estilo para o body */
+body {
+  overflow-x: hidden;
+  background-color: #ffffff; /* Branco */
+}
+
+/* Define o estilo para as divs */
+div {
+  color: #36405f; /* Azul escuro */
+  text-align: center;
+  border-radius: 15px;
+  border: 1px solid #621fa1; /* Roxo */
+  width: 100%;
+  height: 100%;
+  margin: 0 10px;
+}
+
+/* Define o estilo para as listas dentro das divs */
+div ul {
+  text-align: left;
+}
+
+/* Define o estilo para os títulos h1 */
+h1 {
+  margin-bottom: 20px;
+}
+
+/* Define o estilo para a classe .Caixa */
+.Caixa {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* Define o estilo para as tabelas */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* Define o estilo para as células das tabelas */
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  border-radius: 15px;
+}
+
+/* Define o estilo para os cabeçalhos das tabelas */
+th {
+  background-color: #f2f2f2;
+}
+
+/* Define o estilo para linhas pares das tabelas */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
