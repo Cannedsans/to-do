@@ -1,24 +1,70 @@
+/* Define o estilo para o body */
+body {
+  overflow-x: hidden;
+  overflow-y: auto; /* Adiciona scroll vertical se necessário */
+  background-color: #ffffff; /* Branco */
+  margin: 0; /* Remove margens padrão */
+  overflow: hidden;
+}
+
 /* Define o estilo para o main */
 main {
   background-color: #f1f5f9; /* Azul claro */
   color: #36405f; /* Azul escuro */
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
-  border-radius: 10px;
-  display: grid;
-  grid-template-rows: auto 1fr;
-  height: 100%;
-  margin: 0;
-  padding: 0;
 }
 
-/* Define o estilo para o header e o footer */
-header,
-footer {
+/* Define o estilo para o header */
+header {
   background-color: #621fa1; /* Roxo */
   color: #ffffff; /* Branco */
+  padding: 20px; /* Espaçamento interno */
+  text-align: center; /* Centraliza o texto */
+  border-radius: 10px; /* Bordas arredondadas */
+}
+
+/* Define o estilo para o footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #621fa1; /* Roxo */
+  color: #ffffff; /* Branco */
+  padding: 20px; /* Espaçamento interno */
+  text-align: left; /* Centraliza o texto */
+  border-radius: 10px; /* Bordas arredondadas */
+}
+
+/* Define o estilo para o conteúdo principal */
+main > :nth-child(2) {
+  flex: 1; /* Ocupa todo o espaço restante */
+  width: 100%; /* Garante que o conteúdo principal ocupe toda a largura */
+  display: flex;
+  flex-wrap: wrap; /* Permite que os elementos sejam empilhados quando não houver espaço suficiente */
+  justify-content: center; /* Centraliza os elementos horizontalmente */
+  align-items: flex-start; /* Alinha os elementos ao topo verticalmente */
+}
+
+/* Define o estilo para a classe .Caixa */
+.Caixa {
+  display: flex;
+  justify-content: space-between; /* Distribui os elementos igualmente ao longo do eixo principal */
+}
+
+.Caixa form {
+  flex: 1; /* Cada formulário ocupa a mesma largura disponível */
+  margin-right: 50px; /* Espaço entre os formulários */
+}
+
+.Caixa form:last-child {
+  margin-right: 0; /* Remove a margem direita do último formulário */
+}
+/* Define o estilo para a classe .Home */
+.Home {
+  display: flex;
+  justify-content: space-around;
 }
 
 /* Define o estilo para os links */
@@ -26,28 +72,13 @@ a {
   color: #ffffff; /* Branco */
 }
 
-/* Define o estilo para o footer */
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
-/* Define o estilo para o body */
-body {
-  overflow-x: hidden;
-  background-color: #ffffff; /* Branco */
-}
-
 /* Define o estilo para as divs */
 div {
   color: #36405f; /* Azul escuro */
-  text-align: center;
+  text-align: top;
+  align-items: flex-start;
   border-radius: 15px;
-  border: 1px solid #621fa1; /* Roxo */
-  width: 100%;
-  height: 100%;
-  margin: 0 10px;
+  margin: auto;
 }
 
 /* Define o estilo para as listas dentro das divs */
@@ -60,34 +91,90 @@ h1 {
   margin-bottom: 20px;
 }
 
-/* Define o estilo para a classe .Caixa */
-.Caixa {
-  display: flex;
-  width: 100%;
-  height: 100%;
+p {
+  position: top;
 }
 
-/* Define o estilo para as tabelas */
+/* Estilo para tabelas */
 table {
+  margin: 10px;
   border-collapse: collapse;
   width: 100%;
+  border-radius: 10px; /* Raio do arredondamento */
+  overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse as bordas arredondadas */
 }
 
-/* Define o estilo para as células das tabelas */
+/* Estilo para a borda inferior da tabela */
+table tfoot tr:last-child td {
+  border-bottom: 2px solid #621fa1; /* Cor da borda roxa */
+}
+
+/* Estilo para as células das tabelas */
 th,
 td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-  border-radius: 15px;
+  border: 2px solid #621fa1; /* Borda roxa */
+  padding: 10px; /* Espaçamento interno */
+  font-size: 16px; /* Tamanho da fonte */
+  color: #621fa1; /* Cor do texto roxa */
+  background-color: #f1f5f9; /* Fundo cinza claro */
 }
 
-/* Define o estilo para os cabeçalhos das tabelas */
+/* Estilo para os cabeçalhos das tabelas */
 th {
-  background-color: #f2f2f2;
+  background-color: #621fa1;
+  color: #f1f5f9;
 }
 
-/* Define o estilo para linhas pares das tabelas */
+/* Estilo para linhas pares das tabelas */
 tr:nth-child(even) {
-  background-color: #f2f2f2;
+  color: #f1f5f9;
+  background-color: #621fa1;
+}
+
+/* Estilo para os formulários */
+form {
+  flex: 1;
+  margin-right: 10%;
+}
+
+/* Estilo para os labels dos formulários */
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Estilo para os formulários */
+form {
+  margin-bottom: 20px; /* Adiciona espaço entre os formulários */
+}
+
+/* Estilo para os inputs dos formulários */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  display: block; /* Torna os inputs blocos para que fiquem um abaixo do outro */
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #621fa1; /* Borda roxa */
+  border-radius: 20px; /* Bordas bem redondas */
+  margin-bottom: 10px; /* Espaçamento inferior */
+  font-size: 16px; /* Tamanho da fonte */
+  color: #621fa1; /* Cor do texto roxa */
+  background-color: #f1f5f9; /* Fundo cinza claro */
+}
+
+/* Estilo para os botões de submit */
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #621fa1; /* Roxo */
+  color: #ffffff; /* Branco */
+  border: none;
+  border-radius: 20px; /* Bordas bem redondas */
+  cursor: pointer; /* Cursor do mouse muda para um ponteiro */
+}
+
+/* Estilo quando o botão de submit é pressionado */
+button[type="submit"]:active {
+  background-color: #8c3da0; /* Roxo mais escuro */
 }

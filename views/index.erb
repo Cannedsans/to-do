@@ -1,19 +1,18 @@
 <h1>Olá <%= @user%></h1>
-<div class = "Caixa">
-    <div>Criar Tarefa
+<div class = "Home">    
+    <div><p>Criar Tarefa</p>
     <form action="/tarefa" method = "post">
-        <input type="text" name = "tafera" placeholder="Digite uma nova tarefa">
+        <input type="text" name = "tafera" placeholder="Digite uma nova tarefa" required>
         <button type = "submit"> Adicionar tafera</button>
     </form>
 </div>
-<div>Tarefas Pendentes
+<div><p>Tarefas Pendentes</p>
     <ul>
         <% @tarefas.each do |tarefa|%>
-        
         <% if tarefa[4] == @user %>
             <% if tarefa[2] == 0%>
             <li> <%= tarefa[1]%>
-            <form action="/feito" method="post" style="display: inline;">
+            <form action="/feito" method="post" class = "Home">
                 <input type="hidden" name="tarefa" value="<%= tarefa[1] %>">
                 <button type="submit">Feito</button>
             </form>
@@ -24,7 +23,7 @@
         <% end %>
     </ul>
 </div>
-<div>Tarefas Conclúidas
+<div><p>Tarefas Conclúidas</p>
     <ul>
         <% @tarefas.each do |tarefa|%>
             <% if tarefa[4] == @user %>
@@ -35,7 +34,7 @@
         <% end %>
     </ul>
 </div>
-<div>Histórico 
+<div><p>Histórico </p>
     <table>
     <thead>
         <tr>
@@ -57,4 +56,5 @@
     </tbody>
 </table>
 </div>
+
 </div>
